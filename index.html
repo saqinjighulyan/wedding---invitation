@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#fafafa;
+color:#333;
+overflow-x:hidden;
+}
+
+/* LOADING RINGS */
+
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:white;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
+
+.rings{
+font-size:70px;
+animation:spin 2s linear infinite;
+}
+
+@keyframes spin{
+0%{transform:rotate(0deg)}
+100%{transform:rotate(360deg)}
+}
+
+/* MUSIC BUTTON */
+
+.music-btn{
+position:fixed;
+top:20px;
+right:20px;
+z-index:999;
+background:#ff6b81;
+border:none;
+color:white;
+padding:12px 18px;
+border-radius:30px;
+cursor:pointer;
+font-size:14px;
+}
+
+/* HERO PARALLAX */
+
+.hero{
+height:100vh;
+background:url('https://i.pinimg.com/1200x/c1/61/a1/c161a1b8f41c17b3c5fed08bcc814ca7.jpg');
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+position:relative;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+padding:20px;
+}
+
+.hero h1{
+font-size:55px;
+letter-spacing:3px;
+}
+
+.hero h2{
+margin-top:20px;
+font-weight:300;
+}
+
+/* SECTIONS */
+
+section{
+padding:80px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+/* CARD */
+
+.card{
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 15px 35px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+/* COUNTDOWN */
+
+.countdown{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.countdown div{
+background:#f3f3f3;
+padding:20px;
+border-radius:15px;
+min-width:80px;
+font-size:18px;
+}
+
+/* TIMELINE */
+
+.timeline{
+margin-top:40px;
+}
+
+.timeline-item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:40px 0;
+flex-wrap:wrap;
+}
+
+.timeline-card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 8px 25px rgba(0,0,0,0.1);
+width:45%;
+}
+
+.timeline-card h3{
+color:#ff6b81;
+margin-bottom:10px;
+}
+
+/* CAROUSEL */
+
+.carousel{
+overflow:hidden;
+margin-top:50px;
+}
+
+.carousel-track{
+display:flex;
+gap:20px;
+animation:scroll 30s linear infinite;
+}
+
+.carousel img{
+width:260px;
+height:360px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
+/* RSVP */
+
+.rsvp input,
+.rsvp select{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:10px;
+border:1px solid #ddd;
+}
+
+.rsvp button{
+margin-top:15px;
+padding:12px 25px;
+border:none;
+background:#ff6b81;
+color:white;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+}
+
+/* MAP */
+
+.map{
+margin-top:40px;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* FOOTER */
+
+footer{
+margin-top:80px;
+background:#111;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:36px;
+}
+
+.timeline-card{
+width:100%;
+margin-bottom:20px;
+}
+
+.timeline-item{
+flex-direction:column;
+}
+
+.carousel img{
+width:200px;
+height:280px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="loader">
+<div class="rings">💍💍</div>
+</div>
+
+<button class="music-btn" onclick="toggleMusic()">🎵 Music</button>
+
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="hero">
+
+<div class="hero-content">
+<h1>Սամվել & Մարի</h1>
+<h2>Հարսանեկան հրավիրատոմս</h2>
+</div>
+
+</div>
+
+<section data-aos="fade-up">
+
+<div class="card">
+
+<h2>Հարսանեկան հրավիրատոմս</h2>
+
+<p>Սիրով հրավիրում ենք ձեզ կիսելու մեր կյանքի ամենագեղեցիկ օրը</p>
+
+<p><b>Օր:</b> 20 Օգոստոս 2026</p>
+
+<div class="countdown">
+
+<div><span id="days">0</span><br>Days</div>
+<div><span id="hours">0</span><br>Hours</div>
+<div><span id="minutes">0</span><br>Minutes</div>
+<div><span id="seconds">0</span><br>Seconds</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section data-aos="fade-up">
+
+<h2 style="text-align:center">Հիշողություններ</h2>
+
+<div class="carousel">
+
+<div class="carousel-track">
+
+<img src="https://i.pinimg.com/736x/69/6e/40/696e40288349d2c68150b6427fb699c2.jpg">
+<img src="https://i.pinimg.com/736x/c7/df/04/c7df04506a4ff18e8484aba22c33e290.jpg">
+<img src="https://i.pinimg.com/736x/b9/5a/c7/b95ac73495c9dbcdf56e4d7a785d5785.jpg">
+<img src="https://i.pinimg.com/736x/00/f4/d7/00f4d7c15002e8abd6ef4921474f6144.jpg">
+
+<img src="https://i.pinimg.com/736x/69/6e/40/696e40288349d2c68150b6427fb699c2.jpg">
+<img src="https://i.pinimg.com/736x/c7/df/04/c7df04506a4ff18e8484aba22c33e290.jpg">
+
+</div>
+
+</div>
+
+</section>
+
+<section data-aos="zoom-in">
+
+<h2 style="text-align:center">RSVP</h2>
+
+<div class="card rsvp">
+
+<input id="name" type="text" placeholder="Ձեր անունը">
+
+<select id="answer">
+<option>Գալու եմ</option>
+<option>Չեմ կարող գալ</option>
+</select>
+
+<input id="guests" type="number" placeholder="Քանի հոգով եք գալու">
+
+<button onclick="sendMail()">Ուղարկել</button>
+
+</div>
+
+</section>
+
+<section data-aos="fade-up">
+
+<h2 style="text-align:center">Տեղադրություն</h2>
+
+<div class="map">
+
+<iframe
+width="100%"
+height="400"
+style="border:0"
+src="https://maps.google.com/maps?q=Yerevan&t=&z=13&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
+</div>
+
+</section>
+
+<footer>
+MemoryPage © 2026
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({duration:1200});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+
+(function(){
+emailjs.init("BgMLgErVx5JRZnWI3");
+})();
+
+function sendMail(){
+
+var params={
+name:document.getElementById("name").value,
+answer:document.getElementById("answer").value,
+guests:document.getElementById("guests").value
+};
+
+emailjs.send("service_72ft1jd","template_6ku700o",params)
+.then(function(){
+alert("Շնորհակալություն!");
+});
+
+}
+
+</script>
+
+<script>
+
+window.onload=function(){
+setTimeout(()=>{
+document.getElementById("loader").style.display="none";
+},2000);
+}
+
+function toggleMusic(){
+
+var music=document.getElementById("music");
+
+if(music.paused){
+music.play();
+}else{
+music.pause();
+}
+
+}
+
+const eventDate=new Date("Aug 20, 2026 14:00:00").getTime();
+
+setInterval(function(){
+
+const now=new Date().getTime();
+const distance=eventDate-now;
+
+document.getElementById("days").innerHTML=Math.floor(distance/(1000*60*60*24));
+document.getElementById("hours").innerHTML=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+document.getElementById("minutes").innerHTML=Math.floor((distance%(1000*60*60))/(1000*60));
+document.getElementById("seconds").innerHTML=Math.floor((distance%(1000*60))/1000);
+
+},1000);
+
+</script>
+
+</body>
+</html>
+```
